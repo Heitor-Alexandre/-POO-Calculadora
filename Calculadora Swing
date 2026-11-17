@@ -1,0 +1,291 @@
+package Calculadora;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+
+public class Calc {
+
+	private JFrame frmHeitorAlexandre;
+	private JTextField JTFResultado;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calc window = new Calc();
+					window.frmHeitorAlexandre.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calc() {
+		initialize();
+	}
+	
+	double valor1, valor2, valor3, valor4, valor5, valor6, valor7, valor8, valor9;
+	double resultadoAcumulado = 0;
+	String op;
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmHeitorAlexandre = new JFrame();
+		frmHeitorAlexandre.getContentPane().setBackground(new Color(101, 111, 206));
+		frmHeitorAlexandre.setTitle("Heitor Alexandre Rigueira Da Silva- 0025566");
+		frmHeitorAlexandre.setBounds(100, 100, 382, 469);
+		frmHeitorAlexandre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmHeitorAlexandre.getContentPane().setLayout(null);
+		
+		JTFResultado = new JTextField();
+		JTFResultado.setBounds(44, 21, 258, 66);
+		frmHeitorAlexandre.getContentPane().add(JTFResultado);
+		JTFResultado.setColumns(10);
+		
+		JButton btnNewButton = new JButton("0");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("0");
+			}
+		});
+		btnNewButton.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton.setBounds(103, 346, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("1");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("1");
+			}
+		});
+		btnNewButton_1.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_1.setBounds(10, 282, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("2");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("2");
+			}
+		});
+		btnNewButton_2.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_2.setBounds(103, 281, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("3");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("3");
+			}
+		});
+		btnNewButton_3.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_3.setBounds(194, 282, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("4");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("4");
+			}
+		});
+		btnNewButton_4.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_4.setBounds(10, 217, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("5");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("5");
+			}
+		});
+		btnNewButton_5.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_5.setBounds(103, 217, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("6");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("6");
+			}
+		});
+		btnNewButton_6.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_6.setBounds(194, 217, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("7");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("7");
+			}
+		});
+		btnNewButton_7.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_7.setBounds(10, 152, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("8");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("8");
+			}
+		});
+		btnNewButton_8.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_8.setBounds(103, 152, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("9");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText("9");
+			}
+		});
+		btnNewButton_9.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_9.setBounds(194, 152, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_9);
+		
+		JButton btnSoma = new JButton("+");
+		btnSoma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				valor1 = Double.parseDouble(JTFResultado.getText());
+				resultadoAcumulado += Double.parseDouble(JTFResultado.getText());
+				JTFResultado.setText("");
+				op = "Soma";	
+			}
+		});
+		btnSoma.setFont(new Font("Arial Black", Font.BOLD, 20));
+		btnSoma.setBounds(301, 141, 55, 41);
+		frmHeitorAlexandre.getContentPane().add(btnSoma);
+		
+		JButton btnSubtracao = new JButton("-");
+		btnSubtracao.addActionListener(new ActionListener() {
+			
+				public void actionPerformed(ActionEvent e) {
+				    if (!JTFResultado.getText().trim().isEmpty()) {
+				        valor1 = Double.parseDouble(JTFResultado.getText());
+				        JTFResultado.setText("");      
+				        op = "Subtracao";
+				    }
+				}
+		});
+		btnSubtracao.setFont(new Font("Arial Black", Font.BOLD, 20));
+		btnSubtracao.setBounds(301, 193, 55, 41);
+		frmHeitorAlexandre.getContentPane().add(btnSubtracao);
+		
+		JButton btnMultiplicacao = new JButton("*");
+		btnMultiplicacao.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (!JTFResultado.getText().trim().isEmpty()) {
+		            valor1 = Double.parseDouble(JTFResultado.getText());
+		            JTFResultado.setText("");
+		            op = "Multiplicacao";
+		        }
+		    }
+		});
+		btnMultiplicacao.setFont(new Font("Arial Black", Font.BOLD, 20));
+		btnMultiplicacao.setBounds(301, 251, 55, 41);
+		frmHeitorAlexandre.getContentPane().add(btnMultiplicacao);
+		
+		JButton btnDivisao = new JButton("/");
+		btnDivisao.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (!JTFResultado.getText().trim().isEmpty()) {
+		            valor1 = Double.parseDouble(JTFResultado.getText());
+		            JTFResultado.setText("");
+		            op = "Divisao";
+		        }
+		    }
+		});
+		btnDivisao.setFont(new Font("Arial Black", Font.BOLD, 20));
+		btnDivisao.setBounds(301, 303, 55, 41);
+		frmHeitorAlexandre.getContentPane().add(btnDivisao);
+		
+		JButton btnPotenciacao = new JButton("^");
+		btnPotenciacao.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (!JTFResultado.getText().trim().isEmpty()) {
+		            valor1 = Double.parseDouble(JTFResultado.getText());
+		            JTFResultado.setText("");
+		            op = "Potencia";
+		        }
+		    }
+		});
+		btnPotenciacao.setFont(new Font("Arial Black", Font.BOLD, 20));
+		btnPotenciacao.setBounds(301, 359, 55, 41);
+		frmHeitorAlexandre.getContentPane().add(btnPotenciacao);
+		
+		JButton btnNewButton_10_4_1 = new JButton("C");
+		btnNewButton_10_4_1.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        JTFResultado.setText("");      
+		        valor1 = 0;                    
+		        valor2 = 0;                    
+		        op = "";                       
+		        resultadoAcumulado = 0;        
+		    }
+		});
+		btnNewButton_10_4_1.setFont(new Font("Arial Black", Font.BOLD, 17));
+		btnNewButton_10_4_1.setBounds(23, 100, 57, 41);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_10_4_1);
+		
+		JButton btnNewButton_3_1 = new JButton(",");
+		btnNewButton_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTFResultado.setText(",");
+			}
+		});
+		btnNewButton_3_1.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnNewButton_3_1.setBounds(194, 346, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnNewButton_3_1);
+		
+		JButton btnIgual = new JButton("=");
+		btnIgual.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        
+		        if (JTFResultado.getText().isEmpty()) {
+		            return;
+		        }
+		        
+		        valor2 = Double.parseDouble(JTFResultado.getText());
+		        
+		        if ("Soma".equals(op)) {
+		            JTFResultado.setText(String.valueOf(valor1 + valor2));
+		        }
+		        else if ("Subtracao".equals(op)) {
+		            JTFResultado.setText(String.valueOf(valor1 - valor2));
+		        }
+		        else if ("Multiplicacao".equals(op)) {
+		            JTFResultado.setText(String.valueOf(valor1 * valor2));
+		        }
+		        else if ("Divisao".equals(op)) {
+		            if (valor2 == 0) {
+		                JTFResultado.setText("Erro");
+		            } else {
+		                JTFResultado.setText(String.valueOf(valor1 / valor2));
+		            }
+		        }
+		        else if ("Potencia".equals(op)) {
+		            JTFResultado.setText(String.valueOf(Math.pow(valor1, valor2)));
+		        }
+		    }
+		});
+		btnIgual.setFont(new Font("Arial Black", Font.BOLD, 22));
+		btnIgual.setBounds(10, 346, 70, 54);
+		frmHeitorAlexandre.getContentPane().add(btnIgual);
+	}
+}
